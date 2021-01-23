@@ -91,5 +91,22 @@ function demoData(id){
     })
 };
 
-buildPlot("941");
-demoData("941");
+function init(){
+    //Add values to dropdown
+    d3.json("samples.json").then(function(data){
+    data.names.forEach(function(id){
+
+    //select dropdown
+    d3.select("#selDataset").append("option").text(id).property("value");
+    });
+    buildPlot(data.names[0]);
+    demoData(data.names[0]);
+    });
+
+};
+
+function optionChanged(id){
+    buildPlot(id);
+    demoData(id);
+}
+init();
