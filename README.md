@@ -1,4 +1,4 @@
-# Plotly-challenge
+# Belly Button Biodiversity
 
 ## Step 1: Plotly
 
